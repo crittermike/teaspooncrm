@@ -1,5 +1,5 @@
--------------------------------
-        TEASPOON CRM
+TEASPOON CRM
+============
 
 Keep track of people. The end.
 -------------------------------
