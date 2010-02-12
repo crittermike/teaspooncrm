@@ -1,0 +1,296 @@
+html {
+	text-align:center;
+}
+body {
+	text-align: left;
+	font: 13px/18px Georgia,serif;
+	color: #1d1918;
+	margin: 0 auto;
+	width: 600px;
+}
+.clear {
+	clear: both;
+	height: 0;
+	width: 0;
+	line-height: 0;
+	font-size: .1px;
+}
+hr {
+	display: none;
+	height: 0;
+	padding: 0;
+	margin: 0;
+}
+img {
+	border: none;
+}
+label, input {
+    display: block;
+    font-size: 18px;
+}
+input {
+    margin: 5px 0 10px;
+}
+input.checkbox {
+    float: left;
+    margin: 0 5px 0 0;
+}
+
+
+/* HEADER */
+
+#header {
+	 padding: 25px 0 20px 0;
+	 margin: 0;
+	 width: 600;
+	 position: relative;
+	 height: 120px;
+}
+#header #logo a {
+    display: block;
+    margin: 0 auto;
+    height: 85px;
+    font-family: Georgia,serif;
+    font-weight: normal;
+    color: black;
+    font-size: 50px;
+    text-align: center;
+}
+#header #logo a:hover {
+    text-decoration: none;
+}
+#header ul.topnav {
+	padding: 0;
+	margin-top: 25px;
+	width:100%;
+	list-style: none;
+	text-align:center;
+}
+#header ul.topnav li {
+	float:left;
+	margin:0;
+	padding:0;
+	text-transform:uppercase;
+	font-size:20px;
+	width:33%;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+
+}
+#header li a {
+	display: block;
+	padding-left:25px;
+	color:#323232;
+	text-decoration:none;
+
+}
+#header li a:hover {
+	color:#7aac49;
+}
+
+
+
+
+
+
+/* CONTAINER */
+
+#container {
+	clear: both;
+	display:block;
+	width: 600px;
+	min-height: 100%;
+	height: 100%;
+	margin:40px auto 20px auto;
+	padding: 0;
+	text-align: left;
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 12px;
+}
+#container .add {
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding: 10px 0;
+    display: block;
+    width: 120px;
+}
+#container .add:hover {
+    text-decoration: none;
+}
+#container a:link, #container a:visited {
+    color: black;
+    text-decoration: underline;
+}
+#container a:hover {
+    text-decoration: none;
+}
+#container table {
+    width: 100%;
+    font-size: 12px;
+    border-collapse: collapse;
+}
+#container table tr:hover {
+    background: white;
+}
+#container table th, #container table td {
+    padding: 5px;
+    border: 1px solid #E7E0C6;
+    height: auto;
+}
+#container table th {
+    cursor: pointer;
+    background: #222;
+    color: white;
+}
+#container table th.headerSortUp {
+    background: #222 url(../images/arrows.png) no-repeat right -28px;
+}
+#container table th.headerSortDown {
+    background: #222 url(../images/arrows.png) no-repeat right 10px;
+}
+#container .saved {
+    font-size: 16px;
+    color: green;
+    margin-left: 10px;
+}
+#container #edit .submit {
+    display: inline;
+}
+#login a {
+    clear: both;
+}
+#message {
+    border:solid 1px #00a204;
+    background:#b8ffbc;
+    color:#333;
+    padding:7px 0;
+    text-align:center;
+    width: 100%;
+    margin: 10px 0 35px;
+    position: relative;
+}
+#message .close {
+    position: absolute;
+    top: 0px;
+    right: 3px;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: Arial,sans-serif;
+    line-height: 1;
+}
+
+
+
+
+
+/* VIEW/EDIT CONTACT */
+
+#edit input.text, #edit textarea.text {
+    background: transparent;
+    outline: 0;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    font-family: Arial,sans-serif;
+    width: 600px;
+}
+
+#edit input.text:hover, #edit textarea.text:hover {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+#edit input.text:focus, #edit textarea.text:focus {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    background: white;
+}
+
+#edit label {
+    display: none;
+}
+
+#edit .text.name {
+    font-size: 45px;
+    font-family: Georgia,serif;
+}
+
+#edit .address {
+    height: 75px;
+}
+
+#edit .text.notes {
+    width: 100%;
+    margin-top: 30px;
+    min-height: 70px;
+    padding: 3px;
+}
+
+#edit #contact_info input, #edit #contact_info textarea {
+    margin: 10px auto 0;
+    text-align: center;
+}
+#edit #contact_info {
+    margin-top: 40px;
+}
+
+#edit .submit {
+    margin-top: 20px;
+}
+
+/* ADD CONTACT */
+#add_contact {
+    float: left;
+}
+#add_address {
+    float: right;
+    padding-bottom: 30px;
+}
+#add_address textarea {
+    height: 158px;
+    width: 340px;
+}
+#add_notes {
+    clear: both;
+}
+#add_notes textarea {
+    width: 100%;
+}
+#add .submit {
+    display: inline;
+    margin-right: 15px;
+    margin-top: 20px;
+}
+
+
+
+
+
+/* FOOTER */
+
+.footer {
+	border-top:5px solid #DFDBD0;
+	clear:both;
+	color:#A3A2A0;
+	font-family:georgia,serif;
+	font-size:11px;
+	font-style:italic;
+	line-height:16px;
+	margin:0;
+	padding:0 0 10px;
+	text-align: center;
+}
+.footer a {
+	border:medium none !important;
+	color: #222;
+}
+.footer a:hover {
+	text-decoration:none;
+}
+
