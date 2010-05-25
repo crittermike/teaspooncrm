@@ -16,9 +16,14 @@
         echo form_input('phone',set_value('phone'));
       echo '</div>';
 
+	  $addressData = array(
+	  		  'name'		=> 'address',
+              'cols'        => '84'
+            );
+
       echo '<div id="add_address">';
         echo form_label('Address', 'address');
-        echo form_textarea('address',set_value('address'));
+        echo form_textarea($addressData);
       echo '</div>';
 
       echo '<div id="add_notes">';

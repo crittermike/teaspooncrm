@@ -13,7 +13,7 @@ CREATE TABLE `ci_sessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET utf8;
 
 CREATE TABLE `contacts` (
-   `id` tinyint(4),
+   `id` tinyint(4) NOT NULL AUTO_INCREMENT,
    `name` varchar(256),
    `email` varchar(256),
    `phone` varchar(256),

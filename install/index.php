@@ -1,6 +1,6 @@
 <?php
 
-error_reporting(E_NONE);
+error_reporting('E_NONE');
 
 $db_config_path = '../application/config/database.php';
 
@@ -30,10 +30,16 @@ if($_POST) {
 
 		// If no errors, redirect to registration page
 		if(!isset($message)) {
-		  $redir = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
-      $redir .= "://".$_SERVER['HTTP_HOST'];
-      $redir .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
-      $redir = str_replace('install/','',$redir);
+			//Delete Install Directory
+			recursive_remove_directory('../install/');
+			
+			//Remove write permissions from 'application/config/database.php'
+			chmod("application/config/database.php",0500);
+		
+		  	$redir = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
+      		$redir .= "://".$_SERVER['HTTP_HOST'];
+      		$redir .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
+      		$redir = str_replace('install/','',$redir);
 			header( 'Location: ' . $redir . 'auth/welcome' ) ;
 		}
 
@@ -42,6 +48,46 @@ if($_POST) {
 		$message = $core->show_message('error','Not all fields have been filled in correctly. The host, username, password, and database name are required.');
 	}
 }
+
+function recursive_remove_directory($directory, $empty=FALSE)
+{
+	if(substr($directory,-1) == '/')
+	{
+		$directory = substr($directory,0,-1);
+	}
+	if(!file_exists($directory) || !is_dir($directory))
+	{
+		return FALSE;
+	}elseif(is_readable($directory))
+	{
+		$handle = opendir($directory);
+		while (FALSE !== ($item = readdir($handle)))
+		{
+			if($item != '.' && $item != '..')
+			{
+				$path = $directory.'/'.$item;
+				if(is_dir($path)) 
+				{
+					recursive_remove_directory($path);
+				}else{
+					unlink($path);
+				}
+			}
+		}
+		closedir($handle);
+		if($empty == FALSE)
+		{
+			rmdir($directory);
+			/*if(!rmdir($directory))
+			{
+				return FALSE;
+			}*/
+		}
+	}
+	//rmdir($directory);
+	return TRUE;
+}
+ 
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
