@@ -11,7 +11,7 @@ if($_POST) {
     require_once('includes/core_class.php');
     require_once('includes/database_class.php');
 
-    $core         = new Core();
+    $core = new Core();
     $database = new Database();
 
     // Validate the post data
